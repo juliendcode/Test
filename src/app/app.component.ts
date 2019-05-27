@@ -18,11 +18,4 @@ export class AppComponent implements OnInit {
   selectPokemon(pokemon: Pokemon) {
     alert('vous avez cliqué sur ' + pokemon.name);
   }
-  onClick() {
-    console.log('clickkkkk');
-  }
-
-  onKey(event: KeyboardEvent) {
-    this.value = 'Bonjour ' + (<HTMLInputElement>event.target).value;
-  }
 }
