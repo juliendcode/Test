@@ -8,15 +8,21 @@ import { POKEMONS } from './mock-pokemons';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  title = 'Liste des pokémons';
-
+  private title: string = 'Pokémons';
   private pokemons: Pokemon[];
-
+  private value: string = '';
   ngOnInit() {
     this.pokemons = POKEMONS;
   }
 
   selectPokemon(pokemon: Pokemon) {
     alert('vous avez cliqué sur ' + pokemon.name);
+  }
+  onClick() {
+    console.log('clickkkkk');
+  }
+
+  onKey(event: KeyboardEvent) {
+    this.value = 'Bonjour ' + (<HTMLInputElement>event.target).value;
   }
 }
