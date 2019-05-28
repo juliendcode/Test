@@ -11,7 +11,12 @@
         <div class="card-stacked">
           <div class="card-content">
             <p>{{ pokemon.name }}</p>
-            <p><small>{{ pokemon.created }}</small></p>
+            <!-- on ajoute le pipe pour les dates, avec le bon format : -->
+            <p><small>{{ pokemon.created | date:"dd/MM/yyyy" }}</small></p>
+            <!-- on utilise la directive ngFor pour afficher tous les types
+        d'un pokémon donnée -->
+            <span *ngFor='let type of pokemon.types'
+                  class="{{ type | pokemonTypeColor }}">{{ type }}</span>
           </div>
         </div>
       </div>
