@@ -4,7 +4,8 @@ import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
 import { PokemonsModule } from './pokemons/pokemons.module';
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MaterialModule } from './material.module';
 
 
 
@@ -15,7 +16,9 @@ import { PokemonsModule } from './pokemons/pokemons.module';
   imports: [
     BrowserModule,
     PokemonsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    MaterialModule
   ],
   providers: [],
   bootstrap: [ AppComponent ]
