@@ -8,9 +8,10 @@ import { POKEMONS } from './mock-pokemons';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
+
   private title: string = 'Pokémons';
   private pokemons: Pokemon[];
-  private value: string = '';
+
   ngOnInit() {
     this.pokemons = POKEMONS;
   }
