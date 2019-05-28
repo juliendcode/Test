@@ -1,16 +1,60 @@
 <div class="container">
   <div class="row">
-    <div class="card-stacked">
-      <div class="card-content">
-        <p>{{ pokemon.name }}</p>
-        <!-- on ajoute le pipe pour les dates, avec le bon format : -->
-        <p><small>{{ pokemon.created | date:"dd/MM/yyyy" }}</small></p>
-        <!-- on utilise la directive ngFor pour afficher tous les types
-        d'un pokémon donnée -->
-        <span *ngFor='let type of pokemon.types'
-              class="{{ type | pokemonTypeColor }}">{{ type }}</span>
+    <div class="col s12 m6">
+      <div class="card ">
+        <div class="card-image">
+          <img [src]="pokemon.picture"> <span
+                class="card-title">{{ pokemon.name }}</span>
+        </div>
+        <div class="card-stacked"></div>
+        <div class="card-content">
+          <table class="bordered striped">
+            <tbody>
+              <tr>
+                <td>Nom</td>
+                <td><strong>{{ pokemon.name }}</strong></td>
+              </tr>
+              <tr>
+                <td>Points de vie</td>
+                <td><strong>{{ pokemon.hp }}</strong></td>
+              </tr>
+              <tr>
+                <td>Dégâts</td>
+                <td><strong>{{ pokemon.cp }}</strong></td>
+              </tr>
+              <tr>
+                <td>Types</td>
+                <td>
+                  <span *ngFor="let type of pokemon.types"
+                        class="{{ type | pokemonTypeColor }}">{{ type }}</span>
+                </td>
+              </tr>
+              <tr>
+                <td>Date de création</td>
+                <td><em>{{ pokemon.created | date:"dd/MM/yyyy" }}</em></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="card-action">
+          <a (click)="goBack()">Retour</a>
+        </div>
       </div>
     </div>
   </div>
-  <button (click)="goBack()">RETOUR</button>
-</div>
+
+  <!-- <div class="card horizontal">
+        <div class="card-image">
+          <img [src]="pokemon.picture">
+        </div>
+        <div class="card-stacked">
+          <div class="card-content">
+
+            <p>{{ pokemon.name }}</p>
+            <p><small>{{ pokemon.created | date:"dd/MM/yyyy" }}</small></p>
+            <span *ngFor='let type of pokemon.types'
+                  class="{{ type | pokemonTypeColor }}">{{ type }}</span>
+          </div>
+        </div>
+      </div>
+      <button (click)="goBack()">RETOUR</button> -->
