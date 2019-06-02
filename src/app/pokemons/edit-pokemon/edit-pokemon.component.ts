@@ -45,6 +45,8 @@ export class EditPokemonComponent implements OnInit {
   }
   onSubmit(): void {
     console.log("Submit form !");
+    this.pokemonService.updatePokemon(this.pokemon)
+    .subscribe(() => this.goBack())
     let link = [ '/pokemon', this.pokemon.id ];
     this.router.navigate(link);
   }
