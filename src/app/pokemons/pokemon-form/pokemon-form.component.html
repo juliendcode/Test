@@ -1,0 +1,39 @@
+<div class="container">
+  <div class="row">
+    <div class="col s12 m6">
+      <div class="card ">
+        <div class="card-image">
+          <img [src]="pokemon.picture"> <span
+                class="card-title">{{ pokemon.name }}</span>
+        </div>
+        <form *ngIf="pokemon"
+              (ngSubmit)="onSubmit()"
+              novalidate
+              [formGroup]="editPokeForm">
+          <div class="row">
+            <div class="col s8 offset-s2">
+              <div class="card-panel">
+                <!-- Pokemon name -->
+                <div class="form-group"
+                     novalidate>
+                  <label for="name">Nom</label>
+                  <input formControlName="name" />
+
+                  <label for="cp">Cp</label>
+                  <input formControlName="cp" />
+
+                  <label for="hp">Hp</label>
+                  <input formControlName="hp" />
+                </div>
+                <!-- Submit button -->
+                <button type="submit"
+                        class="waves-effect waves-light btn">
+                  Update</button>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
