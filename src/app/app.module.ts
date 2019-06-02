@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { PokemonsModule } from './pokemons/pokemons.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material.module';
+import { HttpClientModule } from '@angular/common/http';
 
 
 
@@ -15,10 +16,12 @@ import { MaterialModule } from './material.module';
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     PokemonsModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MaterialModule
+    MaterialModule,
+
   ],
   providers: [],
   bootstrap: [ AppComponent ]

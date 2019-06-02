@@ -14,6 +14,7 @@ export class ListPokemonComponent implements OnInit {
   pokemons: Pokemon[] = null;
 
 
+
   constructor (public pokemonsService: PokemonsService, private router: Router) { }
 
 
